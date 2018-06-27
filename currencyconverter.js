@@ -17,11 +17,12 @@ droplist.selectedIndex = 0; */
 
 const url = 'https://free.currencyconverterapi.com/api/v5/currencies';
 
-let data;
-fetch(url).then(response => response.json()).then(data => console.log(data));
-data;
+// let data;
+// Call currencyOption method not console.log on the data
+fetch(url).then(response => response.json()).then(data => currencyOption(data.results));
+// data;
 
- let fromcurrency = document.getElementById('countries');
+//  let fromcurrency = document.getElementById('countries');
 
 function currencyOption(data){
 
@@ -44,7 +45,7 @@ function currencyOption(data){
 
         fromcurrency.appendChild(optionFrom);
 
-        toCurrencyInput.appendChild(optionTo);
-    
+        // toCurrencyInput.appendChild(optionTo); // ToCurrencyInput is undefined!
+
     }
 }
