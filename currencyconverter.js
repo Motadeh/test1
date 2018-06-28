@@ -1,17 +1,10 @@
 
 
 
-/* function myfunction() {
-    document.getElementById("fromcurrency").classList.toggle("show"); */
-// }
-
-
 /* let droplist = document.getElementById('country');
 droplist.length = 0;
-
 let defaultoption = document.createElement('option');
 defaultoption.text = 'choose country';
-
 droplist.add(defaultoption);
 droplist.selectedIndex = 0; */
 
@@ -25,13 +18,14 @@ fetch(url).then(response => response.json()).then(data => currencyOption(data.re
 //  let fromcurrency = document.getElementById('countries');
 
 function currencyOption(data){
-
+    //changed the Id's 
     let fromcurrency = document.getElementById('countries');
+    let tocurrency = document.getElementById('countries2');
 
     for (let currency of Object.keys(data).sort()){
         let {currencyName, id} = data[currency];
 
-        console.log(currencyName);
+        // console.log(currencyName);
 
 
 
@@ -40,12 +34,17 @@ function currencyOption(data){
         optionFrom.value = `${currency}`;
 
         let optionTo = document.createElement('option');
-        optionTo.innerText = `${currency}(${currencyName})`;
+        optionTo.innerText = `${currency} (${currencyName})`;
         optionTo.value = `${currency}`;
 
         fromcurrency.appendChild(optionFrom);
 
-        // toCurrencyInput.appendChild(optionTo); // ToCurrencyInput is undefined!
+        tocurrency.appendChild(optionTo); // defined tocurrency
 
     }
 }
+
+/* function myfunction(amount, fromcurrency, tocurrency) {
+    document.getElementById("fromcurrency").classList.toggle("show");
+
+ } */
