@@ -9,7 +9,10 @@
                 document.getElementById("fromcurrency").classList.toggle("show");
             }
         </script> -->
-        <script src="currencyconverter.js"></script>
+        <script src="converter.js"></script>
+        <script src="main.js"></script>
+        <script src="db.js" type="module"></script>
+        <!-- <script src="idb-master/lib/idb.js"></script> -->
         <title>CSS Grid Fundamentals!</title>
 </head>
 <body>
@@ -24,7 +27,7 @@
 
                 <div class="items dropdown1">
                     <option id="option">
-                        convert from
+                        from
                     </option>
                     <select id="countries" name="fromcurrency"> <!-- The id used should be 'countries' not 'country-->
                         jf
@@ -33,19 +36,17 @@
 
                 <div class="items items3">3</div>
 
-                <!-- items4 changed to a select -->
                 <div class="items items4">
                     <option id="option">
-                        convert to
+                        to
                     </option>
-                    <select id="countries2" name="tocurrency"> <!-- The changed to 'countries2'-->
+                    <select id="countries2" name="tocurrency"> <!-- The id used should be 'countries' not 'country-->
                         jf
                     </select>
                 </div>
-                
-                <!-- items5 changed to button -->
+
                 <div class="items items5">
-                    <button onclick="myfunction()" class="drop1">rate</button>
+                    <button onclick="myfunction()" onclick="document.getElementById('amount').value = ''" class="drop1">rate</button>
                     <!-- <div id="exchange" class="dropdown-contents">
                         <!-- <ul>
                             <li>no</li>
@@ -53,7 +54,7 @@
                         </ul> -->
                         <!-- <a href="#">link 1</a> -->
                         <!-- <a href="#">link 2</a> -->
-                    <!-- </div> --> -->
+                    <!-- </div> --> 
                 </div>
         </div>
         <div class="item item4"></div>

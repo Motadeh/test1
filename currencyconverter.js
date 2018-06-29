@@ -10,6 +10,8 @@ droplist.selectedIndex = 0; */
 
 const url = 'https://free.currencyconverterapi.com/api/v5/currencies';
 
+// const url2 = 'https://free.currencyconverterapi.com/api/v5/convert';
+
 // let data;
 // Call currencyOption method not console.log on the data
 fetch(url).then(response => response.json()).then(data => currencyOption(data.results));
@@ -18,9 +20,10 @@ fetch(url).then(response => response.json()).then(data => currencyOption(data.re
 //  let fromcurrency = document.getElementById('countries');
 
 function currencyOption(data){
-    //changed the Id's 
+
     let fromcurrency = document.getElementById('countries');
     let tocurrency = document.getElementById('countries2');
+
 
     for (let currency of Object.keys(data).sort()){
         let {currencyName, id} = data[currency];
@@ -39,12 +42,12 @@ function currencyOption(data){
 
         fromcurrency.appendChild(optionFrom);
 
-        tocurrency.appendChild(optionTo); // defined tocurrency
+        tocurrency.appendChild(optionTo); // ToCurrencyInput is undefined!
 
     }
-}
 
-/* function myfunction(amount, fromcurrency, tocurrency) {
-    document.getElementById("fromcurrency").classList.toggle("show");
+ /* function myfunction(amount, fromcurrency, tocurrency) {
+    document.getElementById("fromcurrency").classList.toggle("show"); */
 
- } */
+ }
+
